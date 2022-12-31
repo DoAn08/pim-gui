@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { fade } from 'svelte/transition';
     let files:any;
     let useYouTube:boolean = true;
     function changeMode() {
@@ -7,6 +8,12 @@
 </script>
 
 <style lang="scss">
+.en {
+    display: var(--en);
+}
+.vi {
+    display: var(--vi);
+}
 button {
     border: none;
     background-color: rgba(51, 51, 51, 0);
@@ -56,7 +63,7 @@ p {
         height: 48px;
         line-height: 48px;
         margin-inline-start: 12px;
-    }
+    }   
 }
 </style>
 
@@ -64,7 +71,8 @@ p {
     <div class="searchBarWrapper" >
         <form action="" class="bar"> <!--process search-->
             {#if useYouTube}
-            <input type="url" placeholder="Input YouTube video / playlist link..." class="searchInput" name="s" autocomplete="off">
+                <input type="url" placeholder="Input YouTube video / playlist link..." class="searchInput en" name="s" autocomplete="off">  
+                <input type="url" placeholder="Nhập liên kết video hoặc danh sách phát Youtube..." class="searchInput vi" name="s" autocomplete="off">
             <button type="submit"><span class="material-symbols-rounded">add</span></button>
             <button on:click={changeMode}><span class="material-symbols-rounded">change_circle</span></button>
             {:else} 
@@ -73,10 +81,11 @@ p {
             }}>
                 <label class="fileInput">
                     <span>upload</span>
-                    <input type="file" accept="audio/*" id="filei" bind:files />
+                    <input type="file" accept="audio/mp3" id="filei" bind:files />
                 </label>
             </button>
-            <p class="fileName">{#if files}{files[0].name}{:else}⠀{/if}</p>
+            <p class="fileName">{#if files}{files[0].name}{:else}⠀<span class="plh">Upload MPEG-3 
+                audio file for use</span>{/if}</p>
             <button type="submit"><span class="material-symbols-rounded">add</span></button>
             <button on:click={changeMode}><span class="material-symbols-rounded">change_circle</span></button>
             {/if}

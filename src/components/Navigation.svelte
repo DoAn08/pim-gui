@@ -1,18 +1,26 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    let lang:string = "vi";
     let ifPlaying:boolean = false; // use this variable to set play mode in rpi 
     let ifDark:boolean = false;
     onMount(() => {
+        localStorage.setItem('lang', lang);
+        document.documentElement.setAttribute('lang', 'vi');
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            localStorage.setItem('theme', 'dark')
+            localStorage.setItem('theme', 'dark');
             document.documentElement.setAttribute('theme', 'dark');
             ifDark = true;
         } else {
-            localStorage.setItem('theme', 'light')
+            localStorage.setItem('theme', 'light');
             document.documentElement.setAttribute('theme', 'light');
             ifDark = false;
         }
     })
+    function languageCtl() {
+        if (lang == "vi") {lang = "en";} else {lang = "vi";}
+        document.documentElement.setAttribute('lang', lang);
+        console.log(lang);
+    }
     function guiControl() {
         ifDark = !ifDark;
         ifDark ? document.documentElement.setAttribute('theme', 'dark') : document.documentElement.setAttribute('theme', 'light');
@@ -64,7 +72,7 @@ button {
         }
     }
 }
-.material-symbols-outlined {
+.material-symbols-rounded {
   font-variation-settings:
   'FILL' 0,
   'wght' 400,
@@ -79,6 +87,7 @@ button {
         <button><span class="material-symbols-rounded">queue_music</span></button>
         <button><span class="material-symbols-rounded">terminal</span></button>
         <div class="end">
+            <button on:click={languageCtl}><span class="material-symbols-rounded">language</span></button>
         {#if !ifDark}    
             <button on:click={guiControl}><span class="material-symbols-rounded">dark_mode</span></button>
         {:else}

@@ -1,6 +1,8 @@
 :root {
     --bg: #333333;
     --cmp: #333333;
+    --en: none;
+    --vi: initial;
 }
 html[theme='light'] {
     --bg: #ffffff;
@@ -9,6 +11,14 @@ html[theme='light'] {
 html[theme='dark'] {
     --bg: #333333;
     --cmp: #ffffff;
+}
+html[lang='en'] {
+    --en: initial;
+    --vi: none;
+}
+html[lang='vi'] {
+    --vi: initial;
+    --en: none;
 }
 html {
     margin: 0 0 0 0;
