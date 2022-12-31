@@ -28,10 +28,16 @@ button:hover {
 p {
     margin: 0;
 }
+.plh {
+    margin: 0 0 0 0;
+    color: #757575;
+}
 .bar {
     display: flex;
+    height: 48px;
     width: calc(100vw - 48px);
     .searchInput {
+        padding: 0;
         height: 48px;
         line-height: 48px;
         font-size: 16px;
@@ -84,8 +90,12 @@ p {
                     <input type="file" accept="audio/mp3" id="filei" bind:files />
                 </label>
             </button>
-            <p class="fileName">{#if files}{files[0].name}{:else}⠀<span class="plh">Upload MPEG-3 
-                audio file for use</span>{/if}</p>
+            <p class="fileName">{#if files}
+                {files[0].name}
+                {:else}
+                <span class="plh en">Upload MPEG-3 audio file for use...</span>
+                <span class="plh vi">Tải tệp tin MP3 lên để sử dụng...</span>
+                {/if}</p>
             <button type="submit"><span class="material-symbols-rounded">add</span></button>
             <button on:click={changeMode}><span class="material-symbols-rounded">change_circle</span></button>
             {/if}
