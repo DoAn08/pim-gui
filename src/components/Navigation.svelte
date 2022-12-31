@@ -84,8 +84,8 @@ button {
 
 <div class="navBar">
     <div class="items">
-        <button><span class="material-symbols-rounded">queue_music</span></button>
-        <button><span class="material-symbols-rounded">terminal</span></button>
+        <a href="/"><button><span class="material-symbols-rounded">queue_music</span></button></a>
+        <a href="/console"><button><span class="material-symbols-rounded">terminal</span></button></a>
         <div class="end">
             <button on:click={languageCtl}><span class="material-symbols-rounded">language</span></button>
         {#if !ifDark}    

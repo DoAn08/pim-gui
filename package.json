@@ -34,6 +34,7 @@
 	"type": "module",
 	"dependencies": {
 		"node-sass": "^8.0.0",
-		"sass": "^1.57.1"
+		"sass": "^1.57.1",
+		"xterm": "^5.1.0"
 	}
 }

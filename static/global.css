@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 :root {
     --bg: #333333;
     --cmp: #333333;
@@ -31,28 +30,4 @@ body {
     font-family: 'Roboto Mono', monospace;
     color: var(--cmp);
     transition: all 0.1s ease-out;
-=======
-:root {
-    --bg: #333333;
-    --cmp: #333333;
-}
-html[theme='light'] {
-    --bg: #ffffff;
-    --cmp: #333333;
-}
-html[theme='dark'] {
-    --bg: #333333;
-    --cmp: #ffffff;
-}
-html {
-    margin: 0 0 0 0;
-    background-color: var(--bg);
-    transition: all 0.1s ease-out;
-}
-body {
-    margin: 0 0 0 0;
-    font-family: 'Roboto Mono', monospace;
-    color: var(--cmp);
-    transition: all 0.1s ease-out;
->>>>>>> 3037f6a68f9f2df8051517c059b4ede3c317f3c2
 }

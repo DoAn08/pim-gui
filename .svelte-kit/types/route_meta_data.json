@@ -1,3 +1,7 @@
 {
-	"/": []
+	"/": [],
+	"/console": [
+		"src/routes/console/+layout.js",
+		"src/routes/console/+layout.js"
+	]
 }
